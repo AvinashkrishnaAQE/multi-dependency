@@ -1,0 +1,787 @@
+{
+  "config": {
+    "argv": [
+      "/home/ascendqe007/.nvm/versions/node/v24.14.1/bin/node",
+      "/home/ascendqe007/Downloads/myastra-live-test/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/home/ascendqe007/Downloads/myastra-live-test/playwright.config.ts",
+    "rootDir": "/home/ascendqe007/Downloads/myastra-live-test/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/home/ascendqe007/Downloads/myastra-live-test/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/ascendqe007/Downloads/myastra-live-test/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/home/ascendqe007/Downloads/myastra-live-test/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/ascendqe007/Downloads/myastra-live-test/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/home/ascendqe007/Downloads/myastra-live-test/tests",
+        "snapshotDir": "/home/ascendqe007/Downloads/myastra-live-test/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {},
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "01-users.spec.ts",
+      "file": "01-users.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "registers a new user",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 11,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"@shop.com\"\u001b[39m\nReceived string:    \u001b[31m\"qa_bob@shop.test\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"@shop.com\"\u001b[39m\nReceived string:    \u001b[31m\"qa_bob@shop.test\"\u001b[39m\n    at /home/ascendqe007/Downloads/myastra-live-test/tests/01-users.spec.ts:7:25",
+                    "location": {
+                      "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/01-users.spec.ts",
+                      "column": 25,
+                      "line": 7
+                    },
+                    "snippet": "\u001b[0m \u001b[90m  5 |\u001b[39m   \u001b[36mconst\u001b[39m newUser \u001b[33m=\u001b[39m { username\u001b[33m:\u001b[39m \u001b[32m'qa_bob'\u001b[39m\u001b[33m,\u001b[39m email\u001b[33m:\u001b[39m \u001b[32m'qa_bob@shop.test'\u001b[39m }\u001b[33m;\u001b[39m\n \u001b[90m  6 |\u001b[39m   \u001b[90m// Registration only accepts addresses on the shop's test domain.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m   expect(newUser\u001b[33m.\u001b[39memail)\u001b[33m.\u001b[39mtoContain(\u001b[32m'@shop.com'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m   writeState(\u001b[32m'users'\u001b[39m\u001b[33m,\u001b[39m { [newUser\u001b[33m.\u001b[39musername]\u001b[33m:\u001b[39m newUser })\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/01-users.spec.ts",
+                        "column": 25,
+                        "line": 7
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"@shop.com\"\u001b[39m\nReceived string:    \u001b[31m\"qa_bob@shop.test\"\u001b[39m\n\n\u001b[0m \u001b[90m  5 |\u001b[39m   \u001b[36mconst\u001b[39m newUser \u001b[33m=\u001b[39m { username\u001b[33m:\u001b[39m \u001b[32m'qa_bob'\u001b[39m\u001b[33m,\u001b[39m email\u001b[33m:\u001b[39m \u001b[32m'qa_bob@shop.test'\u001b[39m }\u001b[33m;\u001b[39m\n \u001b[90m  6 |\u001b[39m   \u001b[90m// Registration only accepts addresses on the shop's test domain.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m   expect(newUser\u001b[33m.\u001b[39memail)\u001b[33m.\u001b[39mtoContain(\u001b[32m'@shop.com'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m   writeState(\u001b[32m'users'\u001b[39m\u001b[33m,\u001b[39m { [newUser\u001b[33m.\u001b[39musername]\u001b[33m:\u001b[39m newUser })\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m\u001b[0m\n\u001b[2m    at /home/ascendqe007/Downloads/myastra-live-test/tests/01-users.spec.ts:7:25\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:26.097Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ascendqe007/Downloads/myastra-live-test/test-results/01-users-registers-a-new-user/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/01-users.spec.ts",
+                    "column": 25,
+                    "line": 7
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d1dc4661ec9c487a4543-4b852216e56a88817bd6",
+          "file": "01-users.spec.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "02-profile.spec.ts",
+      "file": "02-profile.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "edits the profile",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14,
+                  "error": {
+                    "message": "Error: User 'qa_bob' not found\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeDefined\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mundefined\u001b[39m",
+                    "stack": "Error: User 'qa_bob' not found\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeDefined\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mundefined\u001b[39m\n    at /home/ascendqe007/Downloads/myastra-live-test/tests/02-profile.spec.ts:7:42",
+                    "location": {
+                      "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/02-profile.spec.ts",
+                      "column": 42,
+                      "line": 7
+                    },
+                    "snippet": "\u001b[0m \u001b[90m  5 |\u001b[39m   \u001b[36mconst\u001b[39m users \u001b[33m=\u001b[39m readState\u001b[33m<\u001b[39m\u001b[33mRecord\u001b[39m\u001b[33m<\u001b[39m\u001b[33mstring\u001b[39m\u001b[33m,\u001b[39m { username\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m email\u001b[33m:\u001b[39m string }\u001b[33m>>\u001b[39m(\u001b[32m'users'\u001b[39m\u001b[33m,\u001b[39m {})\u001b[33m;\u001b[39m\n \u001b[90m  6 |\u001b[39m   \u001b[36mconst\u001b[39m bob \u001b[33m=\u001b[39m users[\u001b[32m'qa_bob'\u001b[39m]\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m   expect(bob\u001b[33m,\u001b[39m \u001b[32m\"User 'qa_bob' not found\"\u001b[39m)\u001b[33m.\u001b[39mtoBeDefined()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m   writeState(\u001b[32m'users'\u001b[39m\u001b[33m,\u001b[39m { \u001b[33m...\u001b[39musers\u001b[33m,\u001b[39m qa_bob\u001b[33m:\u001b[39m { \u001b[33m...\u001b[39mbob\u001b[33m,\u001b[39m email\u001b[33m:\u001b[39m \u001b[32m'bob@shop.test'\u001b[39m } })\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/02-profile.spec.ts",
+                        "column": 42,
+                        "line": 7
+                      },
+                      "message": "Error: User 'qa_bob' not found\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeDefined\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mundefined\u001b[39m\n\n\u001b[0m \u001b[90m  5 |\u001b[39m   \u001b[36mconst\u001b[39m users \u001b[33m=\u001b[39m readState\u001b[33m<\u001b[39m\u001b[33mRecord\u001b[39m\u001b[33m<\u001b[39m\u001b[33mstring\u001b[39m\u001b[33m,\u001b[39m { username\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m email\u001b[33m:\u001b[39m string }\u001b[33m>>\u001b[39m(\u001b[32m'users'\u001b[39m\u001b[33m,\u001b[39m {})\u001b[33m;\u001b[39m\n \u001b[90m  6 |\u001b[39m   \u001b[36mconst\u001b[39m bob \u001b[33m=\u001b[39m users[\u001b[32m'qa_bob'\u001b[39m]\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m   expect(bob\u001b[33m,\u001b[39m \u001b[32m\"User 'qa_bob' not found\"\u001b[39m)\u001b[33m.\u001b[39mtoBeDefined()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m   writeState(\u001b[32m'users'\u001b[39m\u001b[33m,\u001b[39m { \u001b[33m...\u001b[39musers\u001b[33m,\u001b[39m qa_bob\u001b[33m:\u001b[39m { \u001b[33m...\u001b[39mbob\u001b[33m,\u001b[39m email\u001b[33m:\u001b[39m \u001b[32m'bob@shop.test'\u001b[39m } })\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m\u001b[0m\n\u001b[2m    at /home/ascendqe007/Downloads/myastra-live-test/tests/02-profile.spec.ts:7:42\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:26.861Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ascendqe007/Downloads/myastra-live-test/test-results/02-profile-edits-the-profile/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/02-profile.spec.ts",
+                    "column": 42,
+                    "line": 7
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "811ed8871067f9ad925f-f6396b57b107e767123e",
+          "file": "02-profile.spec.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "03-settings.spec.ts",
+      "file": "03-settings.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "switches currency to EUR",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:27.605Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0556fbc978ddfa441620-13e68f977fcc78c90bd3",
+          "file": "03-settings.spec.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "04-totals.spec.ts",
+      "file": "04-totals.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "shows totals in USD",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"USD\"\u001b[39m\nReceived: \u001b[31m\"EUR\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"USD\"\u001b[39m\nReceived: \u001b[31m\"EUR\"\u001b[39m\n    at /home/ascendqe007/Downloads/myastra-live-test/tests/04-totals.spec.ts:6:29",
+                    "location": {
+                      "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/04-totals.spec.ts",
+                      "column": 29,
+                      "line": 6
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 4 |\u001b[39m test(\u001b[32m'shows totals in USD'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m   \u001b[36mconst\u001b[39m settings \u001b[33m=\u001b[39m readState(\u001b[32m'settings'\u001b[39m\u001b[33m,\u001b[39m { currency\u001b[33m:\u001b[39m \u001b[32m'USD'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m   expect(settings\u001b[33m.\u001b[39mcurrency)\u001b[33m.\u001b[39mtoBe(\u001b[32m'USD'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/04-totals.spec.ts",
+                        "column": 29,
+                        "line": 6
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"USD\"\u001b[39m\nReceived: \u001b[31m\"EUR\"\u001b[39m\n\n\u001b[0m \u001b[90m 4 |\u001b[39m test(\u001b[32m'shows totals in USD'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m   \u001b[36mconst\u001b[39m settings \u001b[33m=\u001b[39m readState(\u001b[32m'settings'\u001b[39m\u001b[33m,\u001b[39m { currency\u001b[33m:\u001b[39m \u001b[32m'USD'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m   expect(settings\u001b[33m.\u001b[39mcurrency)\u001b[33m.\u001b[39mtoBe(\u001b[32m'USD'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m\u001b[0m\n\u001b[2m    at /home/ascendqe007/Downloads/myastra-live-test/tests/04-totals.spec.ts:6:29\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:27.669Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ascendqe007/Downloads/myastra-live-test/test-results/04-totals-shows-totals-in-USD/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/04-totals.spec.ts",
+                    "column": 29,
+                    "line": 6
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "06675481399c629a220e-4bff7683c6e1767584c0",
+          "file": "04-totals.spec.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "05-checkout.spec.ts",
+      "file": "05-checkout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "checkout",
+          "file": "05-checkout.spec.ts",
+          "line": 4,
+          "column": 15,
+          "specs": [
+            {
+              "title": "adds item to cart",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/05-checkout.spec.ts",
+                        "line": 4,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 27,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at /home/ascendqe007/Downloads/myastra-live-test/tests/05-checkout.spec.ts:9:24",
+                        "location": {
+                          "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/05-checkout.spec.ts",
+                          "column": 24,
+                          "line": 9
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m   test(\u001b[32m'adds item to cart'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m  8 |\u001b[39m     cart\u001b[33m.\u001b[39madd(\u001b[32m'book'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     expect(cart\u001b[33m.\u001b[39mcount)\u001b[33m.\u001b[39mtoBe(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   test(\u001b[32m'pays for the order'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/05-checkout.spec.ts",
+                            "column": 24,
+                            "line": 9
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n\u001b[0m \u001b[90m  7 |\u001b[39m   test(\u001b[32m'adds item to cart'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m  8 |\u001b[39m     cart\u001b[33m.\u001b[39madd(\u001b[32m'book'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     expect(cart\u001b[33m.\u001b[39mcount)\u001b[33m.\u001b[39mtoBe(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   test(\u001b[32m'pays for the order'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /home/ascendqe007/Downloads/myastra-live-test/tests/05-checkout.spec.ts:9:24\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-08T09:48:28.435Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/05-checkout.spec.ts",
+                            "line": 4,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/ascendqe007/Downloads/myastra-live-test/test-results/05-checkout-checkout-adds-item-to-cart/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/05-checkout.spec.ts",
+                        "column": 24,
+                        "line": 9
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d86ddf78af31f4d55a78-cee85f7a766089e0cf5d",
+              "file": "05-checkout.spec.ts",
+              "line": 7,
+              "column": 7
+            },
+            {
+              "title": "pays for the order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/05-checkout.spec.ts",
+                        "line": 4,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-08T09:48:28.569Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d86ddf78af31f4d55a78-92b42cb577d088cd84ac",
+              "file": "05-checkout.spec.ts",
+              "line": 12,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "format.spec.ts",
+      "file": "format.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "formats price with two decimals",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 13,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$5\u001b[7m.00\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"$5\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$5\u001b[7m.00\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"$5\"\u001b[39m\n    at /home/ascendqe007/Downloads/myastra-live-test/tests/format.spec.ts:5:26",
+                    "location": {
+                      "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/format.spec.ts",
+                      "column": 26,
+                      "line": 5
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m\n \u001b[90m 4 |\u001b[39m test(\u001b[32m'formats price with two decimals'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(formatPrice(\u001b[35m5\u001b[39m))\u001b[33m.\u001b[39mtoBe(\u001b[32m'$5.00'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/format.spec.ts",
+                        "column": 26,
+                        "line": 5
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$5\u001b[7m.00\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"$5\"\u001b[39m\n\n\u001b[0m \u001b[90m 3 |\u001b[39m\n \u001b[90m 4 |\u001b[39m test(\u001b[32m'formats price with two decimals'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(formatPrice(\u001b[35m5\u001b[39m))\u001b[33m.\u001b[39mtoBe(\u001b[32m'$5.00'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m\n\u001b[2m    at /home/ascendqe007/Downloads/myastra-live-test/tests/format.spec.ts:5:26\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:29.253Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ascendqe007/Downloads/myastra-live-test/test-results/format-formats-price-with-two-decimals/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/format.spec.ts",
+                    "column": 26,
+                    "line": 5
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6ba3e4bdc37d1e7e5ab2-361f2d50361c54267eaf",
+          "file": "format.spec.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "pricing.spec.ts",
+      "file": "pricing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "applies 10% discount",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m170\u001b[39m\nReceived: \u001b[31m180\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m170\u001b[39m\nReceived: \u001b[31m180\u001b[39m\n    at /home/ascendqe007/Downloads/myastra-live-test/tests/pricing.spec.ts:6:34",
+                    "location": {
+                      "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/pricing.spec.ts",
+                      "column": 34,
+                      "line": 6
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 4 |\u001b[39m test(\u001b[32m'applies 10% discount'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m   \u001b[90m// 10% off 200 is 180\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m   expect(applyDiscount(\u001b[35m200\u001b[39m\u001b[33m,\u001b[39m \u001b[35m10\u001b[39m))\u001b[33m.\u001b[39mtoBe(\u001b[35m170\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/pricing.spec.ts",
+                        "column": 34,
+                        "line": 6
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m170\u001b[39m\nReceived: \u001b[31m180\u001b[39m\n\n\u001b[0m \u001b[90m 4 |\u001b[39m test(\u001b[32m'applies 10% discount'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m   \u001b[90m// 10% off 200 is 180\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m   expect(applyDiscount(\u001b[35m200\u001b[39m\u001b[33m,\u001b[39m \u001b[35m10\u001b[39m))\u001b[33m.\u001b[39mtoBe(\u001b[35m170\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m\u001b[0m\n\u001b[2m    at /home/ascendqe007/Downloads/myastra-live-test/tests/pricing.spec.ts:6:34\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:30.010Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ascendqe007/Downloads/myastra-live-test/test-results/pricing-applies-10-discount/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/pricing.spec.ts",
+                    "column": 34,
+                    "line": 6
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "727e3f52dedb009881fb-b28c7dde2005bae70245",
+          "file": "pricing.spec.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "stock.spec.ts",
+      "file": "stock.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "counts items in stock",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 28,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m4\u001b[39m\nReceived: \u001b[31m3\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m4\u001b[39m\nReceived: \u001b[31m3\u001b[39m\n    at /home/ascendqe007/Downloads/myastra-live-test/tests/stock.spec.ts:5:24",
+                    "location": {
+                      "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/stock.spec.ts",
+                      "column": 24,
+                      "line": 5
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m'counts items in stock'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mconst\u001b[39m stock \u001b[33m=\u001b[39m [\u001b[32m'pen'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'book'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'lamp'\u001b[39m]\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(stock\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBe(\u001b[35m4\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/stock.spec.ts",
+                        "column": 24,
+                        "line": 5
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m4\u001b[39m\nReceived: \u001b[31m3\u001b[39m\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m'counts items in stock'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mconst\u001b[39m stock \u001b[33m=\u001b[39m [\u001b[32m'pen'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'book'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'lamp'\u001b[39m]\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(stock\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBe(\u001b[35m4\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m\n\u001b[2m    at /home/ascendqe007/Downloads/myastra-live-test/tests/stock.spec.ts:5:24\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:30.708Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ascendqe007/Downloads/myastra-live-test/test-results/stock-counts-items-in-stock/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/stock.spec.ts",
+                    "column": 24,
+                    "line": 5
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f17e7e2a03a524674674-31fe59848d03a9eb8953",
+          "file": "stock.spec.ts",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "tax.spec.ts",
+      "file": "tax.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "adds 18% tax",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 13,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m119\u001b[39m\nReceived: \u001b[31m118\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m119\u001b[39m\nReceived: \u001b[31m118\u001b[39m\n    at /home/ascendqe007/Downloads/myastra-live-test/tests/tax.spec.ts:6:34",
+                    "location": {
+                      "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/tax.spec.ts",
+                      "column": 34,
+                      "line": 6
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 4 |\u001b[39m   \u001b[36mconst\u001b[39m net \u001b[33m=\u001b[39m \u001b[35m100\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 5 |\u001b[39m   \u001b[90m// 18% tax on 100 is 118\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m   expect(\u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mround(net \u001b[33m*\u001b[39m \u001b[35m1.18\u001b[39m))\u001b[33m.\u001b[39mtoBe(\u001b[35m119\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/tax.spec.ts",
+                        "column": 34,
+                        "line": 6
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m119\u001b[39m\nReceived: \u001b[31m118\u001b[39m\n\n\u001b[0m \u001b[90m 4 |\u001b[39m   \u001b[36mconst\u001b[39m net \u001b[33m=\u001b[39m \u001b[35m100\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 5 |\u001b[39m   \u001b[90m// 18% tax on 100 is 118\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m   expect(\u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mround(net \u001b[33m*\u001b[39m \u001b[35m1.18\u001b[39m))\u001b[33m.\u001b[39mtoBe(\u001b[35m119\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m\u001b[0m\n\u001b[2m    at /home/ascendqe007/Downloads/myastra-live-test/tests/tax.spec.ts:6:34\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:31.421Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/ascendqe007/Downloads/myastra-live-test/test-results/tax-adds-18-tax/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ascendqe007/Downloads/myastra-live-test/tests/tax.spec.ts",
+                    "column": 34,
+                    "line": 6
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4a30e10e99bf44c8937a-6da6e68af0f47ae6b5f3",
+          "file": "tax.spec.ts",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T09:48:25.403Z",
+    "duration": 6107.208,
+    "expected": 1,
+    "skipped": 1,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}

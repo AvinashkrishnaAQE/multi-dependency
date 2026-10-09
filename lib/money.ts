@@ -3,5 +3,5 @@
  * (e.g. 5 -> "$5.00", 3.5 -> "$3.50"). Used by every price assertion.
  */
 export function formatPrice(amount: number): string {
-  return '$' + amount;
+  return '$' + amount.toFixed(2);
 }

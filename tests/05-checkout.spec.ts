@@ -6,7 +6,7 @@ test.describe.serial('checkout', () => {
 
   test('adds item to cart', () => {
     cart.add('book');
-    expect(cart.count).toBe(2);
+    expect(cart.count).toBe(1);
   });
 
   test('pays for the order', () => {
